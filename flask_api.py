@@ -25,7 +25,7 @@ class Users(Resource):
         if args['userId'] in list(data['userId']):
             return {
                 'message': f"'{args['userId']}' already exists."
-            }, 401
+            }, 409
         else:
             # create new dataframe containing new values
             new_data = pd.DataFrame({
@@ -114,7 +114,7 @@ class Locations(Resource):
             # if locationId already exists, return 401 unauthorized
             return {
                 'message': f"'{args['locationId']}' already exists."
-            }, 401
+            }, 409
         else:
             # otherwise, we can add the new location record
             # create new dataframe containing new values
