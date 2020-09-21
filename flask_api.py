@@ -49,7 +49,7 @@ class Users(Resource):
         data = pd.read_csv('users.csv')
         
         if args['userId'] in list(data['userId']):
-            # evaluate strings of lists to lists
+            # evaluate strings of lists to lists !!! never put something like this in prod
             data['locations'] = data['locations'].apply(
                 lambda x: ast.literal_eval(x)
             )
