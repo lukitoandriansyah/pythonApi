@@ -39,8 +39,8 @@ class Users(Resource):
 
     def put(self):
         parser = reqparse.RequestParser()  # initialize
-        parser.add_argument('userId', required=True)  # add args
-        parser.add_argument('location', required=True)
+        parser.add_argument('userId', required=True, location="values")  # add args
+        parser.add_argument('location', required=True, location="values")
         args = parser.parse_args()  # parse arguments to dictionary
 
         # read our CSV
