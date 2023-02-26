@@ -10,9 +10,9 @@ class Locations(Resource):
 
     def post(self):
         parser = reqparse.RequestParser()  # initialize parser
-        parser.add_argument('locationId', required=True, type=int)  # add args
-        parser.add_argument('name', required=True)
-        parser.add_argument('rating', required=True)
+        parser.add_argument('locationId', required=True, type=int, location="values")  # add args
+        parser.add_argument('name', required=True, location="values")
+        parser.add_argument('rating', required=True, location="values")
         args = parser.parse_args()  # parse arguments to dictionary
 
         # read our CSV
