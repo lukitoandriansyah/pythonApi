@@ -71,7 +71,7 @@ class Users(Resource):
 
     def delete(self):
         parser = reqparse.RequestParser()  # initialize
-        parser.add_argument('userId', required=True)  # add userId arg
+        parser.add_argument('userId', required=True, location="values")  # add userId arg
         args = parser.parse_args()  # parse arguments to dictionary
 
         # read our CSV
