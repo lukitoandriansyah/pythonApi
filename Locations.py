@@ -41,7 +41,7 @@ class Locations(Resource):
         parser = reqparse.RequestParser()  # initialize parser
         parser.add_argument('locationId', required=True, type=int, location="values")  # add args
         parser.add_argument('name', store_missing=False, location="values")  # name/rating are optional
-        parser.add_argument('rating', store_missing=False, location="values")
+        parser.add_argument('rating', store_missing=False, type=float, location="values")
         args = parser.parse_args()  # parse arguments to dictionary
 
         # read our CSV
