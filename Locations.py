@@ -74,7 +74,7 @@ class Locations(Resource):
 
     def delete(self):
         parser = reqparse.RequestParser()  # initialize parser
-        parser.add_argument('locationId', required=True, type=int)  # add locationId arg
+        parser.add_argument('locationId', required=True, type=int, location="values")  # add locationId arg
         args = parser.parse_args()  # parse arguments to dictionary
 
         # read our CSV
